@@ -1,11 +1,12 @@
 package com.epicode.U5D2.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,9 +15,8 @@ import lombok.Setter;
 public class Topping extends Item {
 	private String name;
 
-	@ManyToOne
-	@JoinColumn(name = "pizza_id")
-	private Pizza pizza;
+	@ManyToMany
+	private List<Pizza> pizzaList;
 
 	public Topping(String name, int calories, double price) {
 		super(calories, price);

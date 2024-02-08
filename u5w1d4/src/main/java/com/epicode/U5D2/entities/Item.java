@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @MappedSuperclass
 @Getter
 @NoArgsConstructor
-public  class Item {
+public abstract class Item {
 
 	@Id
 	@GeneratedValue

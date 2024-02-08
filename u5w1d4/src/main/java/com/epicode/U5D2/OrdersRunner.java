@@ -1,7 +1,7 @@
 package com.epicode.U5D2;
 
-import com.epicode.U5D2.dao.PizzasService;
-import com.epicode.U5D2.entities.Pizza;
+import com.epicode.U5D2.dao.ItemsService;
+import com.epicode.U5D2.entities.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class OrdersRunner implements CommandLineRunner {
 
 	@Autowired
-    PizzasService itemsService;
+	ItemsService itemsService;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -41,8 +41,15 @@ public class OrdersRunner implements CommandLineRunner {
 //			System.out.println(o1.getTotal())
 
 			System.out.println("----------- SAVE -----------");
-			Pizza newPizza = ctx.getBean("pizza_margherita", Pizza.class);
-			itemsService.savePizza(newPizza);
+			itemsService.saveItem(ctx.getBean("toppings_salami", Item.class));
+			itemsService.saveItem(ctx.getBean("toppings_cheese", Item.class));
+			itemsService.saveItem(ctx.getBean("toppings_tomato", Item.class));
+			itemsService.saveItem(ctx.getBean("pizza_margherita", Item.class));
+			itemsService.saveItem(ctx.getBean("salami_pizza", Item.class));
+
+
+
+
 
 
 		} catch (Exception ex) {

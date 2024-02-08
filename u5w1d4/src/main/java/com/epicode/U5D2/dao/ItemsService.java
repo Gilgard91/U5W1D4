@@ -14,6 +14,6 @@ public class ItemsService {
     public void saveItem(Item newItem){
 
         itemsDao.save(newItem);
-        log.info("item salvato correttamente");
+        log.info("Item salvato correttamente");
     }
 }
