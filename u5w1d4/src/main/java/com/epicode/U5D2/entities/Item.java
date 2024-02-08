@@ -1,15 +1,15 @@
 package com.epicode.U5D2.entities;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
-@Entity
+@MappedSuperclass
 @Getter
 @NoArgsConstructor
-public abstract class Item {
+public  class Item {
 
 	@Id
 	@GeneratedValue
